@@ -1,0 +1,27 @@
+{
+  "name": "libadm",
+  "version": "1.0.0",
+  "description": "Application for management of a library.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/levindoneto/libAdm.git"
+  },
+  "keywords": [
+    "restAPI",
+    "mongodb",
+    "angularJS",
+    "server-management",
+    "nodeJS",
+    "expressJS"
+  ],
+  "author": "Levindo Gabriel Taschetto Neto",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/levindoneto/libAdm/issues"
+  },
+  "homepage": "https://github.com/levindoneto/libAdm#readme"
+}

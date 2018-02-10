@@ -1,5 +1,5 @@
 # libAdm
-Server and Client side for management of a library using NodeJS and MongoDB.
+Application for management of a library using AngularJS, Express, NodeJS and MongoDB.
 
 __Author:__ Levindo Gabriel Taschetto Neto.
 
@@ -12,23 +12,43 @@ __Author:__ Levindo Gabriel Taschetto Neto.
 
 ### Back-end
 
-* AngularJS
+* [AngularJS](https://angularjs.org)
+* [ExpressJS](https://expressjs.com)
 
 ### Database
 
-* MongoDB
+* [MongoDB](https://www.mongodb.com)
+
+### Object Modeling Tool
+
+* [Mongoose](http://mongoosejs.com)
+
+
+## Requiremens for the deployment
+
+* [NodeJS](https://nodejs.org/en/)
+* [MongoDB](https://www.mongodb.com)
 
 ## How to deploy
 
 ```terminal
-$ bash install.sh
+$ npm install express --save
 ```
 
 ## How to use
 
+### RestAPI
+
+#### Add a book
+
 ```terminal
 TODO
 ```
+
+### Client interface
+
+#### Todo
+
 
 ## License
 
