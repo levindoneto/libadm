@@ -4,36 +4,56 @@ Application for management of a library using AngularJS, Express, NodeJS and Mon
 __Author:__ Levindo Gabriel Taschetto Neto.
 
 
-## Technologies
+## Used Technologies
 
-### Front-end
-* HTML v5
-* CSS
+### Front-End
+
+* HTML v5.
+* CSS v3.
+* [Bootstrap v3.3.7](http://getbootstrap.com/).
+* [Font Awesome toolkit](http://fontawesome.io).
 
 ### Back-end
 
-* [AngularJS](https://angularjs.org)
-* [ExpressJS](https://expressjs.com)
+#### Frameworks
+* [AngularJS](https://angularjs.org).
+* [ExpressJS](https://expressjs.com).
 
-### Database
+#### Parsing Middleware
+* [Body-Parser](https://www.npmjs.com/package/body-parser).
 
-* [MongoDB](https://www.mongodb.com)
+#### Database
+* [MongoDB](https://www.mongodb.com).
 
-### Object Modeling Tool
+#### Object Modeling Tool
+* [Mongoose](http://mongoosejs.com).
 
-* [Mongoose](http://mongoosejs.com)
+### Linter
+* [ESLint v4.1.1](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint).
 
+### Alert Animations
+* [Sweet Alert v2.0.8](https://sweetalert.js.org).
 
 ## Requiremens for the deployment
 
-* [NodeJS](https://nodejs.org/en/)
-* [MongoDB](https://www.mongodb.com)
+### On Windows OS*
+* [Node JS](https://www.npmjs.com/get-npm)
+* [Git](http://gitforwindows.org) (Bash terminal)
 
 ## How to deploy
 
 ```terminal
-$ npm install express --save
+$ npm install
 ```
+
+## How to start
+
+```terminal
+$ node app
+```
+
+Thus, the app may be accessed on [http://localhost:8000](http://localhost:8000).
+
 
 ## How to use
 
