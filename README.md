@@ -39,10 +39,18 @@ __Author:__ Levindo Gabriel Taschetto Neto.
 ### On Windows OS*
 * [Node JS](https://www.npmjs.com/get-npm)
 * [Git](http://gitforwindows.org) (Bash terminal)
+* [MongoDB](https://www.mongodb.com) (See [here](docs/mongodbSetUp.md) how to set it up).
 
 ## How to deploy
 
 ```terminal
+$ npm install
+```
+
+### For automatically restarting the server on changes
+
+```terminal
+$ npm install -g nodemon
 $ npm install
 ```
 

@@ -1,0 +1,1 @@
+echo "Setting up the collections for the libadm app";
