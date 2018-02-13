@@ -51,7 +51,6 @@ $ npm install
 
 ```terminal
 $ npm install -g nodemon
-$ npm install
 ```
 
 ## How to start
