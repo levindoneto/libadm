@@ -1,40 +1,53 @@
-var express = require('express');
-var app = express();
-var mongoose = require('mongoose');
-var bodyParser = require('body-parser');
+let mongoose = require('mongoose');
+let bodyParser = require('body-parser');
+let express = require('express');
+let app = express();
 const PORT = 8000;
 Book = require('./dbModels/book');
+
+app.use(bodyParser.json()); // Parse body input from the requests
 
 mongoose.connect(
     'mongodb://localhost/libadm'
 );
 
-var database = mongoose.connection;
+const database = mongoose.connection;
 
 app.get('/', function(request, response) {
     response.send('Api: /api/books');
 });
 
 app.get('/api/books', function(request, response) {
-    Book.getBooks(function(error, books){
-        if(error) {
+    Book.getBooks(function(error, books) {
+        if (error) {
             throw error; // Error on getting the library's books
         } else {
-            // Converting the response to a human readable format
+            // Convert the response to a human readable format
             response.json(books);
         }
-    })
+    });
 });
 
-app.get('/api/books/:_id', (req, res) => {
-    Book.getBook(req.params._id, (err, book) => {
-		if(err){
-			throw err;
-		}
-		res.json(book);
-	});
+app.get('/api/books/:_id', function(request, response) {
+    Book.getBook(request.params._id, function(error, book) {
+        if (error) {
+            throw error;
+        } else {
+            response.json(book);
+        }
+    });
 });
 
+app.post('/api/books', function(request, response) {
+    let book = request.body;
+	Book.addBookElement(book, function(error, book) {
+        if (error) {
+            throw error;
+        } else {
+            response.json(book);
+        }
+    });
+});
 
 app.listen(PORT);
 

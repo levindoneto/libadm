@@ -1,38 +1,43 @@
-var mongoose = require('mongoose');
+const mongoose = require('mongoose');
 
-var bookSchema = mongoose.Schema({
+let bookSchema = mongoose.Schema({
     // Unique ID is obtained when the insert function is used
     title: {
         type: String,
-        required: true
+        required: true, // needed trailing comma
     },
     numberOfCopies: {
         type: Number,
-        required: true
+        required: true,
     },
     numberOfAvailableCopies: {
         type: Number,
-        required: true
+        required: true,
     },
     category: {
         type: String,
-        required: true
+        required: true,
     },
     dateOfAdding: {
         type: Date,
-        default: Date.now
-    }
+        default: Date.now,
+    },
 });
 
 // Make it accessible from outside
-var Book = module.exports = mongoose.model('Book', bookSchema);
+const Book = module.exports = mongoose.model('Book', bookSchema);
 
 // Function for getting the library's books from the database
 module.exports.getBooks = function(callback, restriction) {
-    Book.find(callback).limit(restriction);
-}
+    Book.find(callback).limit(restriction); // return one object with all books
+};
 
 // Function for getting a book by its id
-module.exports.getBook = (bookId, callback) => {
-	Book.findById(bookId, callback);
-}
+module.exports.getBook = function(bookId, callback) {
+    Book.findById(bookId, callback);
+};
+
+// Function for adding a book as an object element
+module.exports.addBookElement = function(book, callback) {
+    Book.create(book, callback);
+};
