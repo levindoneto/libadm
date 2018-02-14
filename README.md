@@ -1,5 +1,5 @@
 # libAdm
-Application for management of a library using AngularJS, Express, NodeJS and MongoDB.
+Application for management of a library using AngularJS, Express JS, Node JS, MongoDB, among other technologies, which consists of a server-side (accessible via REST API) and of a client side.
 
 __Author:__ Levindo Gabriel Taschetto Neto.
 
