@@ -46,8 +46,9 @@ Thus, the app may be accessed on [http://localhost:8000](http://localhost:8000).
 ### Using an app/extension for constructing app requests
 
 #### Add a book (with an object element)
-
+```terminal
 POST HTTP/1.1
+```
 __URL:__ localhost:8000/api/books/
 
 ##### Request body
@@ -61,18 +62,21 @@ __URL:__ localhost:8000/api/books/
 ```
 
 #### Get all books
-
+```terminal
 GET HTTP/1.1
+```
 __URL:__ localhost:8000/api/books/
 
 #### Get a specific book (by its id)
-
+```terminal
 GET HTTP/1.1
+```
 __URL:__ localhost:8000/api/books/ID_BOOK
 
 #### Edit a book (by its id and with an object element)
-
+```terminal
 PUT HTTP/1.1
+```
 __URL:__ localhost:8000/api/books/ID_BOOK
 
 ##### Request body
@@ -86,13 +90,15 @@ __URL:__ localhost:8000/api/books/ID_BOOK
 ```
 
 ### List books with the same category (by the category)
-
+```terminal
 GET HTTP/1.1
+```
 __URL:__ localhost:8000/api/books/categories/ID_CATEGORY
 
 ### Remove a book (by its id)
-
+```terminal
 DELETE HTTP/1.1
+```
 __URL:__ localhost:8000/api/books/ID_BOOK
 
 ## License
