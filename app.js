@@ -17,6 +17,17 @@ app.get('/', function(request, response) {
     response.send('Api: /api/books');
 });
 
+app.post('/api/books', function(request, response) {
+    let book = request.body;
+	Book.addBookElement(book, function(error, book) {
+        if (error) {
+            throw error;
+        } else {
+            response.json(book);
+        }
+    });
+});
+
 app.get('/api/books', function(request, response) {
     Book.getBooks(function(error, books) {
         if (error) {
@@ -38,15 +49,19 @@ app.get('/api/books/:_id', function(request, response) {
     });
 });
 
-app.post('/api/books', function(request, response) {
-    let book = request.body;
-	Book.addBookElement(book, function(error, book) {
-        if (error) {
-            throw error;
-        } else {
-            response.json(book);
+app.put('/api/books/:_id', (request, response) => {
+    let elementBookForEdition = request.body;
+    Book.updateBook(
+        elementBookForEdition,
+        {_id: request.params._id},
+        {},
+        function(error, elementBookForEdition) {
+            if (error) {
+                throw error;
+            }
+            response.json(elementBookForEdition);
         }
-    });
+    );
 });
 
 app.listen(PORT);

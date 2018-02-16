@@ -27,6 +27,11 @@ let bookSchema = mongoose.Schema({
 // Make it accessible from outside
 const Book = module.exports = mongoose.model('Book', bookSchema);
 
+// Function for adding a book as an object element
+module.exports.addBookElement = function(book, callback) {
+    Book.create(book, callback);
+};
+
 // Function for getting the library's books from the database
 module.exports.getBooks = function(callback, restriction) {
     Book.find(callback).limit(restriction); // return one object with all books
@@ -37,7 +42,13 @@ module.exports.getBook = function(bookId, callback) {
     Book.findById(bookId, callback);
 };
 
-// Function for adding a book as an object element
-module.exports.addBookElement = function(book, callback) {
-    Book.create(book, callback);
+// Function for editting a book by its id as query for the database
+module.exports.updateBook = function(bookElement, settings, dbQuery, callback) {
+    let updatedElement = {
+        title: bookElement.title,
+        numberOfCopies: bookElement.numberOfCopies,
+        numberOfAvailableCopies: bookElement.numberOfAvailableCopies,
+        category: bookElement.category,
+    };
+    Book.findOneAndUpdate(dbQuery, updatedElement, settings, callback);
 };
