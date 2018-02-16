@@ -1,34 +1,25 @@
 # libAdm
-Application for management of a library using AngularJS, Express JS, Node JS, MongoDB, among other technologies, which consists of a server-side (accessible via REST API) and of a client side.
+Rest API for management of a library using Express JS, Node JS, MongoDB, among other technologies.
 
 __Author:__ Levindo Gabriel Taschetto Neto.
 
-
 ## Used Technologies
 
-### Front-End
-
-* HTML v5.
-* CSS v3.
-* [Bootstrap v3.3.7](http://getbootstrap.com/).
-* [Font Awesome toolkit](http://fontawesome.io).
-
-### Back-end
-
-#### Framework(s)
+### Framework(s)
 * [ExpressJS](https://expressjs.com).
 
-#### Parsing Middleware
+### Parsing Middleware
 * [Body-Parser](https://www.npmjs.com/package/body-parser).
 
-#### Database
+### Database
 * [MongoDB](https://www.mongodb.com).
 
-#### Object Modeling Tool
+### Object Modeling Tool
 * [Mongoose](http://mongoosejs.com).
 
 ### Linter
 * [ESLint v4.1.1](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint).
+
 ## Requiremens for the deployment
 
 ### On Windows OS*
@@ -41,12 +32,6 @@ __Author:__ Levindo Gabriel Taschetto Neto.
 $ npm install
 ```
 
-### For automatically restarting the server on changes
-
-```terminal
-$ npm install -g nodemon
-```
-
 ## How to start
 
 ```terminal
@@ -55,33 +40,32 @@ $ node app
 
 Thus, the app may be accessed on [http://localhost:8000](http://localhost:8000).
 
-## How to use
+## How to use the Rest API
 
-### RestAPI
 
-#### Using an app/extension for constructing app requests
+### Using an app/extension for constructing app requests
 
-##### Add a book (with an object element)
+#### Add a book (with an object element)
 
 POST HTTP/1.1
 __URL:__ localhost:8000/api/books/
 
-###### Request body
+##### Request body
 ```terminal
 {
-	"title": "A book",
-	"category": "romance",
-	"numberOfCopies": "40",
+    "title": "A book",
+    "category": "romance",
+    "numberOfCopies": "40",
     "numberOfAvailableCopies": "20"
 }
 ```
 
-##### Get all books
+#### Get all books
 
 GET HTTP/1.1
 __URL:__ localhost:8000/api/books/
 
-##### Get an specific book (by its id)
+#### Get a specific book (by its id)
 
 GET HTTP/1.1
 __URL:__ localhost:8000/api/books/ID_BOOK
@@ -91,17 +75,22 @@ __URL:__ localhost:8000/api/books/ID_BOOK
 PUT HTTP/1.1
 __URL:__ localhost:8000/api/books/ID_BOOK
 
-###### Request body
+##### Request body
 ```terminal
 {
-	"title": "A book",
-	"category": "romance",
-	"numberOfCopies": "40",
-    "numberOfAvailableCopies": "20"
+    "title": "An edited book",
+    "category": "suspence",
+    "numberOfCopies": "40",
+    "numberOfAvailableCopies": "19"
 }
 ```
 
-#### Remove a book (by its id)
+### List books with the same category (by the category)
+
+GET HTTP/1.1
+__URL:__ localhost:8000/api/books/categories/ID_CATEGORY
+
+### Remove a book (by its id)
 
 DELETE HTTP/1.1
 __URL:__ localhost:8000/api/books/ID_BOOK

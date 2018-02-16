@@ -4,7 +4,7 @@ let bookSchema = mongoose.Schema({
     // Unique ID is obtained when the insert function is used
     title: {
         type: String,
-        required: true, // needed trailing comma
+        required: true, // Needed trailing comma
     },
     numberOfCopies: {
         type: Number,
@@ -51,6 +51,11 @@ module.exports.updateBook = function(bookElement, settings, dbQuery, callback) {
         category: bookElement.category,
     };
     Book.findOneAndUpdate(dbQuery, updatedElement, settings, callback);
+};
+
+// Function for books which have the same category
+module.exports.getElementsByCategory = function(category, callback) {
+    Book.find({category: {$in: [category]}}, callback);
 };
 
 // Function for editting a book by its id as query for the database

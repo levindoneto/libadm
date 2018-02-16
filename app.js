@@ -64,6 +64,18 @@ app.put('/api/books/:_id', (request, response) => {
     );
 });
 
+app.get('/api/books/categories/:category', (request, response) => {
+    Book.getElementsByCategory(
+        request.params.category,
+        function(error, elementsWithTheCategory) {
+            if (error) {
+                throw error;
+            }
+            response.json(elementsWithTheCategory);
+        }
+    );
+});
+
 app.delete('/api/books/:_id', (request, response) => {
     Book.removeBook(
         {_id: request.params._id},
