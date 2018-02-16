@@ -64,6 +64,18 @@ app.put('/api/books/:_id', (request, response) => {
     );
 });
 
+app.delete('/api/books/:_id', (request, response) => {
+    Book.removeBook(
+        {_id: request.params._id},
+        function(error, deletedElementBook) {
+            if (error) {
+                throw error;
+            }
+            response.json(deletedElementBook);
+        }
+    );
+});
+
 app.listen(PORT);
 
 console.log('App is now running on port ', PORT);

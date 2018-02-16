@@ -52,3 +52,8 @@ module.exports.updateBook = function(bookElement, settings, dbQuery, callback) {
     };
     Book.findOneAndUpdate(dbQuery, updatedElement, settings, callback);
 };
+
+// Function for editting a book by its id as query for the database
+module.exports.removeBook = function(dbQuery, callback) {
+    Book.remove(dbQuery, callback);
+};
