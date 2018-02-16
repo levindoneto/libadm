@@ -15,8 +15,7 @@ __Author:__ Levindo Gabriel Taschetto Neto.
 
 ### Back-end
 
-#### Frameworks
-* [AngularJS](https://angularjs.org).
+#### Framework(s)
 * [ExpressJS](https://expressjs.com).
 
 #### Parsing Middleware
@@ -30,15 +29,10 @@ __Author:__ Levindo Gabriel Taschetto Neto.
 
 ### Linter
 * [ESLint v4.1.1](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint).
-
-### Alert Animations
-* [Sweet Alert v2.0.8](https://sweetalert.js.org).
-
 ## Requiremens for the deployment
 
 ### On Windows OS*
 * [Node JS](https://www.npmjs.com/get-npm)
-* [Git](http://gitforwindows.org) (Bash terminal)
 * [MongoDB](https://www.mongodb.com) (See [here](docs/mongodbSetUp.md) how to set it up).
 
 ## How to deploy
@@ -61,21 +55,56 @@ $ node app
 
 Thus, the app may be accessed on [http://localhost:8000](http://localhost:8000).
 
-
 ## How to use
 
 ### RestAPI
 
-#### Add a book
+#### Using an app/extension for constructing app requests
 
+##### Add a book (with an object element)
+
+POST HTTP/1.1
+__URL:__ localhost:8000/api/books/
+
+###### Request body
 ```terminal
-TODO
+{
+	"title": "A book",
+	"category": "romance",
+	"numberOfCopies": "40",
+    "numberOfAvailableCopies": "20"
+}
 ```
 
-### Client interface
+##### Get all books
 
-#### Todo
+GET HTTP/1.1
+__URL:__ localhost:8000/api/books/
 
+##### Get an specific book (by its id)
+
+GET HTTP/1.1
+__URL:__ localhost:8000/api/books/ID_BOOK
+
+#### Edit a book (by its id and with an object element)
+
+PUT HTTP/1.1
+__URL:__ localhost:8000/api/books/ID_BOOK
+
+###### Request body
+```terminal
+{
+	"title": "A book",
+	"category": "romance",
+	"numberOfCopies": "40",
+    "numberOfAvailableCopies": "20"
+}
+```
+
+#### Remove a book (by its id)
+
+DELETE HTTP/1.1
+__URL:__ localhost:8000/api/books/ID_BOOK
 
 ## License
 
